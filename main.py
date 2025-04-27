@@ -109,7 +109,6 @@ st.write(f" **Put Price**: ${heston_put_price:.2f}")
 
 st.subheader("Price Grids, Spot vs. Vol")
 
-# Grid settings (same as before)
 spot_prices = np.linspace(50, 150, 10)
 volatilities = np.linspace(0.1, 0.5, 10)
 
@@ -127,13 +126,11 @@ for sigma_ in volatilities:
     call_grid.append(call_row)
     put_grid.append(put_row)
 
-# Make dataframes
 import pandas as pd
 
 call_df = pd.DataFrame(call_grid, index=[f"σ={v:.2f}" for v in volatilities], columns=[f"S={s:.0f}" for s in spot_prices])
 put_df = pd.DataFrame(put_grid, index=[f"σ={v:.2f}" for v in volatilities], columns=[f"S={s:.0f}" for s in spot_prices])
 
-# Display side by side
 col1, col2 = st.columns(2)
 
 with col1:
@@ -145,5 +142,6 @@ with col2:
     st.dataframe(put_df.style.background_gradient(cmap="plasma").format("${:.2f}"))
 
 st.caption("Heston simulation uses 10,000 paths and 1,000 time steps for rho-correlated W_1, W_2.")
+
 
 
