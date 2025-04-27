@@ -141,7 +141,7 @@ with col2:
     st.markdown("**Put**")
     st.dataframe(put_df.style.background_gradient(cmap="plasma").format("${:.2f}"))
 
-st.caption("Heston simulation uses 10,000 paths and 1,000 time steps for rho-correlated W_1, W_2.")
+st.caption("Heston simulation uses 2,000 paths and 1,000 time steps for rho-correlated W_1, W_2.")
 
 
 
