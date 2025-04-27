@@ -67,7 +67,7 @@ with col2:
 
 # --- Heston Model Simulation and Pricing ---
 
-st.header("Heston Model Option Pricing")
+st.header("Heston Model Option Pricing (takes a few seconds)")
 
 rho = st.sidebar.number_input("Correlation (heston)", min_value=-1.0, max_value=1.0, value=0.15)
 v0 = sigma ** 2  # Initial variance from implied vol
