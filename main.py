@@ -75,7 +75,7 @@ kappa = st.sidebar.number_input("Mean Reversion Rate (heston)", min_value=0.01, 
 theta = st.sidebar.number_input("Long Run Variance (heston)", min_value=0.0001, value=0.04)
 xi = st.sidebar.number_input("Volatility of Variance (heston)", min_value=0.01, value=0.5)
 
-def heston_price(S0, K, T, r, v0, rho, kappa, theta, xi, n_steps=1000, n_paths=10000):
+def heston_price(S0, K, T, r, v0, rho, kappa, theta, xi, n_steps=1000, n_paths=2000):
     dt = T / n_steps
     S = np.full(n_paths, S0)
     v = np.full(n_paths, v0)
